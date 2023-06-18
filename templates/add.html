@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style3.css') }}">
+</head>
+<body>
+    <div class="form">
+        <form action="{{ url_for('add_chip') }}" method="POST">
+            <label for="_id">ID</label>
+            <input type="text" id="_id" name="_id" required>
+
+            <label for="Name">Name</label>
+            <input type="text" id="Name" name="Name" required>
+
+            <label for="Memory">Memory</label>
+            <input type="text" id="Memory" name="Memory" required>
+
+            <label for="Tags">Tags</label>
+            <input type="text" id="Tags" name="Tags">
+
+            <label for="Status">Status</label>
+            <input type="text" id="Status" name="Status" required>
+
+            <label for="PS">PS</label>
+            <input type="text" id="PS" name="PS">
+
+            <input type="submit" value="Add Chip">
+        </form>
+    </div>
+</body>
+</html>

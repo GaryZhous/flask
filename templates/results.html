@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <!-- ... -->
+    <div class="results">
+        {% if results|length > 0 %}
+        <table>
+            <tr>
+                <th>_id</th>
+                <th>Name</th>
+                <th>Memory</th>
+                <th>Tags</th>
+                <th>Status</th>
+                <th>P.S.</th>
+                <th>Actions</th>
+            </tr>
+            {% for result in results %}
+                <tr>
+                    <form action="{{ url_for('update_chip', id=result['_id']) }}" method="POST">
+                        <td><input type="text" name="_id" value="{{ result['_id'] }}" required></td>
+                        <td><input type="text" name="Name" value="{{ result['Name'] }}" required></td>
+                        <td><input type="text" name="Memory" value="{{ result['Memory'] }}" required></td>
+                        <td><input type="text" name="Tags" value="{{ result['Tags'] }}"></td>
+                        <td><input type="text" name="Status" value="{{ result['Status'] }}" required></td>
+                        <td><input type="text" name="PS" value="{{ result['PS'] }}"></td>
+                        <td>
+                            <input type="submit" value="Update">
+                            <a href="{{ url_for('delete_chip', id=result['_id']) }}" class="delete-button">Delete</a>
+                        </td>
+                    </form>
+                </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <h2>Sorry, nothing found.</h2>
+        {% endif %}
+        <div class="buttons">
+            <a href="{{ url_for('home') }}" class="back-button">Go Back</a>
+            <a href="{{ url_for('add_chip') }}" class="add-button">Add Chip</a>
+        </div>
+    </div>
+    <!-- ... -->
+</body>
+</html>
