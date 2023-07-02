@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+</head>
+<body>
+    <h1>Full List</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Memory</th>
+            <th>Tags</th>
+            <th>Status</th>
+            <th>PS</th>
+        </tr>
+        {% for item in results %}
+        <tr>
+            <td>{{item['_id']}}</td>
+            <td>{{item['Name']}}</td>
+            <td>{{item['Memory']}}</td>
+            <td>{{item['Tags']}}</td>
+            <td>{{item['Status']}}</td>
+            <td>{{item['PS']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="buttons">
+        <a href="{{ url_for('home') }}" class="button back-button">Go Back</a>
+        <a href="{{ url_for('add_chip') }}" class="button add-button">Add Chip</a>
+    </div>    
+</body>
+</html>
