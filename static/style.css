@@ -58,3 +58,19 @@ body {
     text-align: center;
     line-height: 10px;
 }
+
+#showAllButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.25em;
+    color: rgb(11, 11, 11);
+    background-color: #ebf3eb;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#showAllButton:hover {
+    background-color: #f3f8f3;
+}
