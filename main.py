@@ -22,6 +22,11 @@ def results():
     results = loads(query_results)
     return render_template('results.html', results=results)
 
+@app.route('/list')
+def list_all():
+    results = mongo.db['MCU-Inventory'].find()
+    return render_template('list.html', results=results)
+
 @app.route('/add', methods=['GET', 'POST'])
 def add_chip():
     if request.method == 'POST':
