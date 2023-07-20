@@ -12,9 +12,16 @@
             <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo">
         </div>
         <form id="searchForm" method="POST" action="/search">
-            <input type="text" id="searchQuery" name="searchQuery" placeholder="Search">
+            <input type="text" id="searchQuery" list="services" name="searchQuery" placeholder="Search">
             <button id="searchButton" type="submit">Search</button>
         </form>
+
+        <datalist id="services">
+            <option value="Arduino Nano 33 BLE">Arduino Nano 33 BLE</option>
+            <option value="Arduino Nano 33 BLE Sense">Arduino Nano 33 BLE Sense</option>
+            <option value="Raspberry Pi 4">Raspberry Pi 4</option>
+          </datalist>
+
         <form action="/list" id="showAllForm">
             <button type="submit" id="showAllButton">Show All</button>
         </form>        
