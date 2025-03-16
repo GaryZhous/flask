@@ -3,7 +3,7 @@ from flask_pymongo import PyMongo
 from bson.json_util import dumps, loads
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://Gary:Garyzhou1201@local.2mq3j.mongodb.net/MCU?retryWrites=true&w=majority&appName=Local"
+app.config["MONGO_URI"] = "mockup"
 mongo = PyMongo(app)
 
 @app.route('/')
